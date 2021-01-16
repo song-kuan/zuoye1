@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>商品id</th>
+        <th>商品名称</th>
+        <th>商品数量</th>
+        <th>操作</th>
+    </tr>
+    {{range $i,$v:=.ProductArray}}
+    <tr>
+        <td>{{$v.Id}}</td>
+        <td>{{$v.Productname}}</td>
+        <td>{{$v.Productnum}}</td>
+        <td><a href="/product/order/{{$v.Id}}"><button>抢购</button></a></td>
+    </tr>
+    {{end}}
+</table>
+    <a href="/user/logout"><button>退出</button></a>
+    <a href="/order/info"><button>查看订单详情</button></a>
+</body>
+</html>

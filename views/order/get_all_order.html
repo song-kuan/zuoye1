@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>订单id</th>
+        <th>用户id</th>
+        <th>商品id</th>
+        <th>订单状态</th>
+        <th>订单操作</th>
+    </tr>
+    {{range $i,$v:=.orderArray}}
+    <tr>
+        <td>{{$v.Id}}</td>
+        <td>{{$v.Userid}}</td>
+        <td>{{$v.Productid}}</td>
+        <td>{{if eq $v.Orderstatus 0}}等待中{{else if eq $v.Orderstatus 1}}抢购成功{{else}}抢购失败{{end}}</td>
+        <td><a href="/order/erase/{{$v.Id}}"><button>删除订单</button></a></td>
+    </tr>
+    {{end}}
+</table>
+<a href="/product/info"><button>返回</button></a>
+</body>
+</html>

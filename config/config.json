@@ -1,0 +1,17 @@
+{
+    "app_name": "iris-test",
+    "port": "8080",
+    "data_base":{
+        "driver": "mysql",
+        "user": "sql192_144_230_",
+        "pwd":  "K46d2weFsy",
+        "host": "127.0.0.1",
+        "database": "sql192_144_230_"
+    },
+    "rabbit_mq":{
+        "user": "song",
+        "pwd":  "123456",
+        "url":  "127.0.0.1:5672",
+        "vhost":"song"
+    }
+}
